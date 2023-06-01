@@ -37,7 +37,7 @@
         <div class="column column-score">
           <h2>Your Result</h2>
           <div class="result-circle">
-            <span>76</span>
+            <span data-result>76</span>
             <span>of 100</span>
           </div>
           <h1>Great</h1>
@@ -54,7 +54,7 @@
         </div>
       </article>
     </main>
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
@@ -62,14 +62,14 @@
       <a href="https://www.frontendmentor.io/profile/skyrimer"
         >Kirill Chekmenev</a
       >.
-    </div>
+    </footer>
+    <template id="indicatorTemplate">
+      <div class="indicator">
+        <img data-image />
+        <div data-category class="indicator-category"></div>
+        <div data-score class="indicator-score"></div>
+      </div>
+    </template>
   </body>
-  <template id="indicatorTemplate">
-    <div class="indicator">
-      <img data-image />
-      <div data-category class="indicator-category"></div>
-      <div data-result class="indicator-result"></div>
-    </div>
-  </template>
   <script src="/js/main.js"></script>
 </html>

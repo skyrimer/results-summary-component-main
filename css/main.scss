@@ -61,6 +61,8 @@ h2 {
 .card {
   display: flex;
   flex-wrap: wrap;
+  border-radius: 2rem;
+  box-shadow: 0 30px 60px hsl(241, 100%, 89%);
   .column {
     flex: 1 1 50%;
     padding: 2rem min(3rem, 6vw);
@@ -170,7 +172,7 @@ p {
     margin-inline: 0.5rem auto;
     color: hsl(var(--accent-color));
   }
-  .indicator-result {
+  .indicator-score {
     font-weight: 800;
     span {
       color: color-mix(in srgb, hsla(var(--accent-color), 0.15), hsl(224, 30%, 27%));

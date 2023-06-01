@@ -3,7 +3,9 @@ const indicatorWrapper = document.querySelector("[data-indicator-container]");
 fetch("data.json")
   .then((response) => response.json())
   .then((jsonData) => {
+    let scoreSum = 0;
     jsonData.forEach((indicatorData) => {
+      scoreSum += indicatorData.score;
       let indicator = indicatorTemplate.content.cloneNode(true);
       indicator
         .querySelector(".indicator")
@@ -17,10 +19,12 @@ fetch("data.json")
       indicator.querySelector("[data-category]").textContent =
         indicatorData.category;
       indicator.querySelector(
-        "[data-result]"
+        "[data-score]"
       ).innerHTML = `${indicatorData.score} <span>/ 100</span>`;
       indicatorWrapper.appendChild(indicator);
     });
+    document.querySelector("[data-result]").textContent =
+      trunc(scoreSum / jsonData.length);
   })
   .catch((error) => {
     console.log("Error:", error);
